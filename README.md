@@ -97,6 +97,8 @@ Command (run 2026-11-19 against the 179 most recent open `Device request:`
 issues, two API pages):
 
 ```bash
+# the corpus is the issues API shape, one JSON object per line
+gh api repos/krisgfx9/Wireless-Device-Battery-Monitor/issues   -f state=open -f per_page=100 -f page=1   --jq '.[]|select(.title|startswith("Device request:"))|{number,url:.html_url,body}' > real-corpus.jsonl
 python3 wireless_battery_triage.py --corpus real-corpus.jsonl --json
 ```
 
