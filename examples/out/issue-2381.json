@@ -1,0 +1,57 @@
+{
+  "schema": "wireless-battery-triage/1",
+  "inputs": 1,
+  "summary": {
+    "by_verdict": {
+      "generic-battery": 0,
+      "vendor-feature-control": 0,
+      "vendor-notify-only": 0,
+      "no-battery-surface": 1,
+      "unparseable": 0
+    },
+    "share_by_verdict": {
+      "generic-battery": 0.0,
+      "vendor-feature-control": 0.0,
+      "vendor-notify-only": 0.0,
+      "no-battery-surface": 1.0,
+      "unparseable": 0.0
+    },
+    "supportable": 0,
+    "needs_reverse_engineering": 1
+  },
+  "records": [
+    {
+      "device": "H2002YG",
+      "type": "headset",
+      "requests_merged": 1,
+      "note": "Sent from the Wireless Battery app, Windows build 19045.6466] IDs 3206:0881. HID: if3 000C:0001 3/0/0. USB: HIDClass (HidUsb), MEDIA (usbaudio).",
+      "vid": "3206",
+      "pid": "0881",
+      "collections": [
+        {
+          "iface": 3,
+          "page": 12,
+          "usage": 1,
+          "page_hex": "000C",
+          "usage_hex": "0001",
+          "in_len": 3,
+          "out_len": 0,
+          "feat_len": 0,
+          "vendor": false
+        }
+      ],
+      "open_errors": 0,
+      "transports": [
+        "HIDClass (HidUsb)",
+        "MEDIA (usbaudio)"
+      ],
+      "source": "examples/in/issue-2381.md",
+      "url": null,
+      "verdict": "no-battery-surface",
+      "reasons": [
+        "no battery usage and no vendor page; HID pages present: 000C"
+      ],
+      "next_step": "no HID battery surface; support would need USB/Bluetooth vendor data outside HID"
+    }
+  ]
+}

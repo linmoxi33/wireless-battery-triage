@@ -1,0 +1,122 @@
+{
+  "schema": "wireless-battery-triage/1",
+  "inputs": 1,
+  "summary": {
+    "by_verdict": {
+      "generic-battery": 0,
+      "vendor-feature-control": 1,
+      "vendor-notify-only": 0,
+      "no-battery-surface": 0,
+      "unparseable": 0
+    },
+    "share_by_verdict": {
+      "generic-battery": 0.0,
+      "vendor-feature-control": 1.0,
+      "vendor-notify-only": 0.0,
+      "no-battery-surface": 0.0,
+      "unparseable": 0.0
+    },
+    "supportable": 1,
+    "needs_reverse_engineering": 0
+  },
+  "records": [
+    {
+      "device": "FGG MADLIONS MAD G [FGG-12060006]",
+      "type": "mouse",
+      "requests_merged": 1,
+      "note": "idk :3 Sent from the Wireless Battery app, Windows build 19045.6093] IDs 373B:100F. HID: if1 0001:0006 9/0/0, if1 0001:0002 5/0/0, if1 FF00:0001 0/0/64, if1 000C:0001 3/0/0, if1 FF11:0001 5/0/0, if2 FF10:0001 65/65/9, if0 0001:0002 8/0/0. USB: HIDClass (HidUsb) x3.",
+      "vid": "373B",
+      "pid": "100F",
+      "collections": [
+        {
+          "iface": 1,
+          "page": 1,
+          "usage": 6,
+          "page_hex": "0001",
+          "usage_hex": "0006",
+          "in_len": 9,
+          "out_len": 0,
+          "feat_len": 0,
+          "vendor": false
+        },
+        {
+          "iface": 1,
+          "page": 1,
+          "usage": 2,
+          "page_hex": "0001",
+          "usage_hex": "0002",
+          "in_len": 5,
+          "out_len": 0,
+          "feat_len": 0,
+          "vendor": false
+        },
+        {
+          "iface": 1,
+          "page": 65280,
+          "usage": 1,
+          "page_hex": "FF00",
+          "usage_hex": "0001",
+          "in_len": 0,
+          "out_len": 0,
+          "feat_len": 64,
+          "vendor": true
+        },
+        {
+          "iface": 1,
+          "page": 12,
+          "usage": 1,
+          "page_hex": "000C",
+          "usage_hex": "0001",
+          "in_len": 3,
+          "out_len": 0,
+          "feat_len": 0,
+          "vendor": false
+        },
+        {
+          "iface": 1,
+          "page": 65297,
+          "usage": 1,
+          "page_hex": "FF11",
+          "usage_hex": "0001",
+          "in_len": 5,
+          "out_len": 0,
+          "feat_len": 0,
+          "vendor": true
+        },
+        {
+          "iface": 2,
+          "page": 65296,
+          "usage": 1,
+          "page_hex": "FF10",
+          "usage_hex": "0001",
+          "in_len": 65,
+          "out_len": 65,
+          "feat_len": 9,
+          "vendor": true
+        },
+        {
+          "iface": 0,
+          "page": 1,
+          "usage": 2,
+          "page_hex": "0001",
+          "usage_hex": "0002",
+          "in_len": 8,
+          "out_len": 0,
+          "feat_len": 0,
+          "vendor": false
+        }
+      ],
+      "open_errors": 0,
+      "transports": [
+        "HIDClass (HidUsb) x3"
+      ],
+      "source": "examples/in/issue-2382.md",
+      "url": null,
+      "verdict": "vendor-feature-control",
+      "reasons": [
+        "2 vendor collection(s) with a feature report >= 3 bytes: FF00/0001 feat=64, FF10/0001 feat=9"
+      ],
+      "next_step": "a query channel exists; a vendor driver can be written if the protocol is known"
+    }
+  ]
+}

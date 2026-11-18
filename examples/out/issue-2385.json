@@ -1,0 +1,42 @@
+{
+  "schema": "wireless-battery-triage/1",
+  "inputs": 1,
+  "summary": {
+    "by_verdict": {
+      "generic-battery": 0,
+      "vendor-feature-control": 0,
+      "vendor-notify-only": 0,
+      "no-battery-surface": 0,
+      "unparseable": 1
+    },
+    "share_by_verdict": {
+      "generic-battery": 0.0,
+      "vendor-feature-control": 0.0,
+      "vendor-notify-only": 0.0,
+      "no-battery-surface": 0.0,
+      "unparseable": 1.0
+    },
+    "supportable": 0,
+    "needs_reverse_engineering": 0
+  },
+  "records": [
+    {
+      "device": "Keychron M6 Wireless Mouse",
+      "type": "mouse",
+      "requests_merged": 1,
+      "note": "idk Sent from the Wireless Battery app, Windows build 19045.6466] Device not in the app's list.",
+      "vid": null,
+      "pid": null,
+      "collections": [],
+      "open_errors": 0,
+      "transports": [],
+      "source": "examples/in/issue-2385.md",
+      "url": null,
+      "verdict": "unparseable",
+      "reasons": [
+        "no 'IDs VVVV:PPPP' and no 'HID:' collection in the report"
+      ],
+      "next_step": "ask the reporter to rerun the app's dump on the device and paste the line"
+    }
+  ]
+}
